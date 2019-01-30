@@ -13,7 +13,7 @@ function inviteLikers() {
         if(il.length > 0) {
             for(var i = 0; i < il.length; i++) {
                 var el = il[i];
-                setTimeout(function(el) { console.log(el.closest('li').querySelectorAll('a')[1].innerText + ' obdržel pozvánku k označení stránky To se mi líbí.'); el.click(); }, total * random(1, 3), el);
+                setTimeout(function(el) { console.log(el.closest('li').querySelectorAll('a')[1].innerText + ' obdržel(a) pozvánku k označení stránky To se mi líbí.'); el.click(); }, total * random(1, 3), el);
                 total++;
         
                 if(total > 100) { console.log('Byl dosažen limit 100 pozvánek. Po jejich odeslání opakujte úlohu s odstupem několika hodin.'); break; }
