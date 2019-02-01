@@ -1,11 +1,16 @@
-function inviteLikers() {
-
+(function inviteLikers() {
     var total = 1;
     var pages = 1;
+	var count = 0;
 
     function random(min, max) {
         return Number(Math.floor(Math.random() * ((max * 1000) - (min * 1000) + 1)) + (min * 1000));
     }
+	
+	function showProgress(name) {
+		count++;
+		console.log(count + ' - ' + name + ' obdržel(a) pozvánku k označení stránky jako To se mi líbí.');
+	}
     
     function inviteList() {
         var il = document.querySelectorAll('a[ajaxify^="/pages/post_like_invite/send/"]');
@@ -13,7 +18,7 @@ function inviteLikers() {
         if(il.length > 0) {
             for(var i = 0; i < il.length; i++) {
                 var el = il[i];
-                setTimeout(function(el) { console.log(el.closest('li').querySelectorAll('a')[1].innerText + ' obdržel(a) pozvánku k označení stránky To se mi líbí.'); el.click(); }, total * random(1, 3), el);
+                setTimeout(function(el) { showProgress(el.closest('li').querySelectorAll('a')[1].innerText); el.click(); }, total * random(1, 3), el);
                 total++;
         
                 if(total > 100) { console.log('Byl dosažen limit 100 pozvánek. Po jejich odeslání opakujte úlohu s odstupem několika hodin.'); break; }
@@ -39,9 +44,4 @@ function inviteLikers() {
     
     console.log('Skript byl spuštěn.');
     loadMore();
-
-    return;
-
-}
-
-inviteLikers();
+})();
