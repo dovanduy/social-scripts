@@ -1,7 +1,7 @@
 (function inviteLikers() {
     var total = 1;
     var pages = 1;
-	var count = 0;
+    var count = 0;
 
     function random(min, max) {
         return Number(Math.floor(Math.random() * ((max * 1000) - (min * 1000) + 1)) + (min * 1000));
