@@ -7,10 +7,10 @@
         return Number(Math.floor(Math.random() * ((max * 1000) - (min * 1000) + 1)) + (min * 1000));
     }
 	
-	function showProgress(name) {
-		count++;
-		console.log(count + ' - ' + name + ' obdržel(a) pozvánku k označení stránky jako To se mi líbí.');
-	}
+    function showProgress(name) {
+        count++;
+        console.log(count + ' - ' + name + ' obdržel(a) pozvánku k označení stránky jako To se mi líbí.');
+    }
     
     function inviteList() {
         var il = document.querySelectorAll('a[ajaxify^="/pages/post_like_invite/send/"]');
