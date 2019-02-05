@@ -19,12 +19,11 @@
             for(var i = 0; i < il.length; i++) {
                 var el = il[i];
                 setTimeout(function(el) { showProgress(el.closest('li').querySelectorAll('a')[1].innerText); el.click(); }, total * random(1, 3), el);
-        
-                if(total >= 100) { console.log('Byl dosažen limit 100 pozvánek. Po jejich odeslání opakujte úlohu s odstupem několika hodin.'); break; }
                 total++;
+                if(total >= 100) { console.log('Byl dosažen limit 100 pozvánek. Po jejich odeslání opakujte úlohu s odstupem několika hodin.'); break; }
             }
     
-            console.log('Bude odesláno ' + total + ' z ' + il.length + ' pozvánek. Muže to trvat až ' + (total * 3) + ' vteřin.');
+            console.log('Bude odesláno ' + (total - 1) + ' z ' + il.length + ' pozvánek. Muže to trvat až ' + ((total - 1) * 3) + ' vteřin.');
         } else {
             console.log('V seznamu nejsou lidé k odeslání pozvánky.');
         }
