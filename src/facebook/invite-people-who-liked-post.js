@@ -20,7 +20,7 @@
                 var el = il[i];
                 setTimeout(function(el) { showProgress(el.closest('li').querySelectorAll('a')[1].innerText); el.click(); }, total * random(1, 3), el);
                 total++;
-                if(total >= 100) { console.log('Byl dosažen limit 100 pozvánek. Po jejich odeslání opakujte úlohu s odstupem několika hodin.'); break; }
+                if(total > 100) { console.log('Byl dosažen limit 100 pozvánek. Po jejich odeslání opakujte úlohu s odstupem několika hodin.'); break; }
             }
     
             console.log('Bude odesláno ' + (total - 1) + ' z ' + il.length + ' pozvánek. Muže to trvat až ' + ((total - 1) * 3) + ' vteřin.');
